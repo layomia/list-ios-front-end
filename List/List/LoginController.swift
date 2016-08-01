@@ -64,8 +64,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
                 
                 let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
                     
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                    //self.activityIndicator.stopAnimating()
+                    //UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
                     
                     print("Response: \(response)")
@@ -82,7 +82,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
                             //login successful
                             let defaults = `NSUserDefaults`.standardUserDefaults()
                             
-                            defaults.setObject(jsonServerResponse["id"]! as! String, forKey: "user_id")
+                            defaults.setObject(jsonServerResponse["_id"]! as! String, forKey: "user_id")
                             defaults.synchronize()
                             
                             print("user logged in")
@@ -101,6 +101,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
                 })
                 
                 task.resume()
+                self.activityIndicator.stopAnimating()
+                UIApplication.sharedApplication().endIgnoringInteractionEvents()
             })
             
 

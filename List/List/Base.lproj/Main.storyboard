@@ -19,6 +19,11 @@
             <string>Garamond</string>
             <string>Garamond</string>
             <string>Garamond</string>
+            <string>Garamond</string>
+            <string>Garamond</string>
+            <string>Garamond</string>
+            <string>Garamond</string>
+            <string>Garamond</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -79,7 +84,7 @@
                         <viewControllerLayoutGuide type="bottom" id="p4h-yO-dAN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vsu-EJ-LfV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="first name" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1hy-2s-JBG">
@@ -107,9 +112,6 @@
                                 <fontDescription key="fontDescription" name="Garamond" family="Garamond" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="list-logo" translatesAutoresizingMaskIntoConstraints="NO" id="GmB-EG-F8H">
-                                <rect key="frame" x="92" y="47" width="190" height="59"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNv-hy-M9g">
                                 <rect key="frame" x="33" y="588" width="309" height="59"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
@@ -135,6 +137,9 @@
                                     <action selector="register:" destination="vAy-Ra-ocx" eventType="touchUpInside" id="J90-MM-HOh"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="list-logo" translatesAutoresizingMaskIntoConstraints="NO" id="GmB-EG-F8H">
+                                <rect key="frame" x="113" y="47" width="149" height="59"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -147,6 +152,7 @@
                         <outlet property="password" destination="U2m-9S-KwJ" id="F70-Nv-H8m"/>
                         <outlet property="repeatPassword" destination="ccB-N7-u1k" id="Ojw-VG-pue"/>
                         <outlet property="username" destination="woN-t1-yQW" id="xLC-fv-XsO"/>
+                        <segue destination="fbz-lV-vuB" kind="show" identifier="register" id="wzm-Ql-jpr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4e-4U-mog" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,21 +221,22 @@
                     <connections>
                         <outlet property="email" destination="eW0-7Z-sA3" id="Gp0-QW-h5t"/>
                         <outlet property="password" destination="bic-8R-GMh" id="yGe-BQ-xUg"/>
+                        <segue destination="fbz-lV-vuB" kind="show" identifier="login" id="3Ko-cm-C7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EkO-FG-9DG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="927.5" y="-190.5"/>
         </scene>
-        <!--mainScreenController-->
-        <scene sceneID="6EI-jn-Rut">
+        <!--SWRevealViewController-->
+        <scene sceneID="5Zu-Hd-loP">
             <objects>
-                <viewController title="mainScreenController" id="bKW-GJ-HvM" customClass="MainScreenController" customModule="List" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SWRevealViewController" title="SWRevealViewController" id="fbz-lV-vuB" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AdN-c6-zSc"/>
-                        <viewControllerLayoutGuide type="bottom" id="Z3S-GL-Hxn"/>
+                        <viewControllerLayoutGuide type="top" id="WSt-6L-mfO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mv1-Ko-MBe"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RF4-bf-chF">
+                    <view key="view" contentMode="scaleToFill" id="n4H-y5-JV3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -237,39 +244,144 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="ye3-Ql-Dhq" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="SdJ-pK-7ow"/>
+                        <segue destination="B6B-wl-Cvh" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="iSB-yE-NOu"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qNU-GA-X3F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QdG-FG-xfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495.5" y="329.5"/>
+            <point key="canvasLocation" x="1430" y="330"/>
         </scene>
-        <!--Home Screen-->
-        <scene sceneID="Ird-qj-Mqa">
+        <!--HomeController-->
+        <scene sceneID="glh-JX-Tdn">
             <objects>
-                <tableViewController id="vl0-Bz-zCa" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="daq-f1-Rod">
+                <viewController storyboardIdentifier="HomeController" title="HomeController" id="ye3-Ql-Dhq" customClass="HomeController" customModule="List" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Lm-l0-yeq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iad-qU-ANp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Npn-DL-597">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1zQ-s1-JCc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="3eB-Jc-JTK">
+                                        <barButtonItem key="leftBarButtonItem" image="hamB" id="25e-BJ-oiW">
+                                            <color key="tintColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homepage_background" translatesAutoresizingMaskIntoConstraints="NO" id="jOi-TP-ArW">
+                                <rect key="frame" x="31" y="246" width="344" height="362"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="create new list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15T-i1-rmv">
+                                <rect key="frame" x="133" y="488" width="140" height="21"/>
+                                <fontDescription key="fontDescription" name="Garamond" family="Garamond" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5e-sZ-B6x">
+                                <rect key="frame" x="162" y="376" width="82" height="74"/>
+                                <state key="normal" title="new list"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwL-ir-lzy">
+                                <rect key="frame" x="102" y="101" width="171" height="49"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.050980392156862744" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Garamond" family="Garamond" pointSize="24"/>
+                                <state key="normal" title="view lists">
+                                    <color key="titleColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="vl0-Bz-zCa" id="zV4-PQ-Ns3"/>
-                            <outlet property="delegate" destination="vl0-Bz-zCa" id="WDI-lZ-GdS"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Home Screen" id="7yZ-R7-8rO"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MzZ-uW-PgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="menuButton" destination="25e-BJ-oiW" id="NFc-Pk-wo8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rH8-N4-aCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2378" y="297"/>
+            <point key="canvasLocation" x="1887.5" y="738.5"/>
+        </scene>
+        <!--MenuController-->
+        <scene sceneID="xPy-Wt-7iL">
+            <objects>
+                <viewController title="MenuController" id="B6B-wl-Cvh" customClass="MenuController" customModule="List" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3fD-li-btu"/>
+                        <viewControllerLayoutGuide type="bottom" id="etC-cX-S62"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aNq-Fv-vrh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhL-Kc-ObP">
+                                <rect key="frame" x="74" y="105" width="157" height="121"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="list_menu_icon" translatesAutoresizingMaskIntoConstraints="NO" id="2y7-yf-o09">
+                                <rect key="frame" x="137" y="135" width="31" height="27"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQB-Ef-U79">
+                                <rect key="frame" x="126" y="179" width="52" height="21"/>
+                                <fontDescription key="fontDescription" name="Garamond" family="Garamond" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ph-4b-0hI">
+                                <rect key="frame" x="74" y="273" width="157" height="121"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="favorites_menu_icon" translatesAutoresizingMaskIntoConstraints="NO" id="kqQ-Hk-wQO">
+                                <rect key="frame" x="137" y="303" width="31" height="27"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM9-Sg-pHp">
+                                <rect key="frame" x="110" y="347" width="85" height="27"/>
+                                <fontDescription key="fontDescription" name="Garamond" family="Garamond" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0Y-x8-tLW">
+                                <rect key="frame" x="74" y="455" width="157" height="121"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jr5-N4-FWW">
+                                <rect key="frame" x="116" y="528" width="73" height="27"/>
+                                <fontDescription key="fontDescription" name="Garamond" family="Garamond" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings_menu_icon" translatesAutoresizingMaskIntoConstraints="NO" id="C8v-XC-f9S">
+                                <rect key="frame" x="140" y="487" width="25" height="25"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xsM-nx-uFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887.5" y="-231.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="favorites_menu_icon" width="35" height="33"/>
+        <image name="hamB" width="45" height="25"/>
+        <image name="homepage_background" width="321" height="344"/>
         <image name="list-logo" width="183" height="87"/>
+        <image name="list_menu_icon" width="32" height="27"/>
         <image name="login-arrow" width="58" height="58"/>
+        <image name="settings_menu_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kLy-lI-qg7"/>
         <segue reference="fOx-Os-kbK"/>
+        <segue reference="kLy-lI-qg7"/>
+        <segue reference="wzm-Ql-jpr"/>
     </inferredMetricsTieBreakers>
 </document>

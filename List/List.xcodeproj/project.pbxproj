@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35B2A2441D4D461300AF2250 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B2A2431D4D461300AF2250 /* MainScreenController.swift */; };
+		355821F31D4D7ABE0095135B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355821F21D4D7ABE0095135B /* SWRevealViewController.m */; };
+		355821F61D4D7D8B0095135B /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355821F51D4D7D8B0095135B /* MenuController.swift */; };
+		355821F81D4D80080095135B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355821F71D4D80080095135B /* HomeController.swift */; };
 		35F4799A1D42795C00DC0588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F479991D42795C00DC0588 /* AppDelegate.swift */; };
 		35F4799C1D42795C00DC0588 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F4799B1D42795C00DC0588 /* ViewController.swift */; };
 		35F4799F1D42795C00DC0588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F4799D1D42795C00DC0588 /* Main.storyboard */; };
@@ -22,7 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		35B2A2431D4D461300AF2250 /* MainScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenController.swift; sourceTree = "<group>"; };
+		355821F01D4D7ABE0095135B /* List-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "List-Bridging-Header.h"; sourceTree = "<group>"; };
+		355821F11D4D7ABE0095135B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		355821F21D4D7ABE0095135B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		355821F51D4D7D8B0095135B /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		355821F71D4D80080095135B /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		35F479961D42795B00DC0588 /* List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = List.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35F479991D42795C00DC0588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35F4799B1D42795C00DC0588 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		355821F41D4D7AC50095135B /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				355821F11D4D7ABE0095135B /* SWRevealViewController.h */,
+				355821F21D4D7ABE0095135B /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		35F4798D1D42795B00DC0588 = {
 			isa = PBXGroup;
 			children = (
@@ -68,12 +83,14 @@
 		35F479981D42795C00DC0588 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				355821F41D4D7AC50095135B /* SWRevealViewController */,
 				35F479991D42795C00DC0588 /* AppDelegate.swift */,
-				35B2A2431D4D461300AF2250 /* MainScreenController.swift */,
 				35F479B41D43101600DC0588 /* LoginController.swift */,
 				35F479B61D44E8A000DC0588 /* RegisterController.swift */,
+				355821F51D4D7D8B0095135B /* MenuController.swift */,
 				35F4799B1D42795C00DC0588 /* ViewController.swift */,
 				35F479B81D44F46F00DC0588 /* Helper.swift */,
+				355821F71D4D80080095135B /* HomeController.swift */,
 				35F4799D1D42795C00DC0588 /* Main.storyboard */,
 				35F479A31D42795C00DC0588 /* Assets.xcassets */,
 				35F479B01D42F8B200DC0588 /* GaramondBold.ttf */,
@@ -81,6 +98,7 @@
 				35F479A51D42795C00DC0588 /* LaunchScreen.storyboard */,
 				35F479A81D42795C00DC0588 /* Info.plist */,
 				35F479A01D42795C00DC0588 /* List.xcdatamodeld */,
+				355821F01D4D7ABE0095135B /* List-Bridging-Header.h */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -159,10 +177,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				355821F61D4D7D8B0095135B /* MenuController.swift in Sources */,
 				35F479B71D44E8A000DC0588 /* RegisterController.swift in Sources */,
 				35F4799C1D42795C00DC0588 /* ViewController.swift in Sources */,
 				35F479B51D43101600DC0588 /* LoginController.swift in Sources */,
-				35B2A2441D4D461300AF2250 /* MainScreenController.swift in Sources */,
+				355821F31D4D7ABE0095135B /* SWRevealViewController.m in Sources */,
+				355821F81D4D80080095135B /* HomeController.swift in Sources */,
 				35F4799A1D42795C00DC0588 /* AppDelegate.swift in Sources */,
 				35F479A21D42795C00DC0588 /* List.xcdatamodeld in Sources */,
 				35F479B91D44F46F00DC0588 /* Helper.swift in Sources */,
@@ -279,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = List/Info.plist;
@@ -286,6 +307,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.not--you.List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "List/List-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -294,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = List/Info.plist;
@@ -301,6 +325,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.not--you.List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "List/List-Bridging-Header.h";
 			};
 			name = Release;
 		};

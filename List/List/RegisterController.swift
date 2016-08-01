@@ -69,7 +69,6 @@ class RegisterController: UIViewController, UITextFieldDelegate {
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
-                    
                     print("Response: \(response)")
                     let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)!
                     print("Body: \(strData)")
@@ -86,10 +85,10 @@ class RegisterController: UIViewController, UITextFieldDelegate {
                             //registration successful
                             let defaults = `NSUserDefaults`.standardUserDefaults()
                             
-                            defaults.setObject(jsonServerResponse["id"]! as! String, forKey: "user_id")
+                            defaults.setObject(jsonServerResponse["user_id"]! as! String, forKey: "user_id")
                             defaults.synchronize()
                             
-                            print("user signed up")
+                            print("user registered")
                             self.performSegue("register")
                             
                         } else {

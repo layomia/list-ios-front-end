@@ -14,19 +14,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        //check whether user is signed in. Probably not the best way for now, but do some more research about this
+        if defaults.objectForKey("user_id") != nil && (defaults.objectForKey("user_id") as? String) != "" {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let yourVC = mainStoryboard.instantiateViewControllerWithIdentifier("SWRevealViewController")
+            appDelegate.window?.rootViewController = yourVC
+            appDelegate.window?.makeKeyAndVisible()
+        }
+
         return true
-    }
-    
-    func applicationDidFinishLaunching(application: UIApplication) {
-        // Override point for customization after application launch.
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        print("here")
-        print(mainStoryboard)
-        let viewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainController")
-        UIApplication.sharedApplication().keyWindow?.rootViewController = viewController;
     }
 
     func applicationWillResignActive(application: UIApplication) {
