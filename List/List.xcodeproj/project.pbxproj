@@ -10,6 +10,15 @@
 		355821F31D4D7ABE0095135B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355821F21D4D7ABE0095135B /* SWRevealViewController.m */; };
 		355821F61D4D7D8B0095135B /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355821F51D4D7D8B0095135B /* MenuController.swift */; };
 		355821F81D4D80080095135B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355821F71D4D80080095135B /* HomeController.swift */; };
+		355B97B11D57631B0040EF3E /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B97B01D57631B0040EF3E /* SettingsController.swift */; };
+		355B97B31D5766570040EF3E /* SettingsHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B97B21D5766570040EF3E /* SettingsHomeController.swift */; };
+		3561753C1D6356240035170A /* CreateListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3561753B1D6356240035170A /* CreateListController.swift */; };
+		3561753F1D63633E0035170A /* Grocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3561753E1D63633E0035170A /* Grocery.swift */; };
+		358322BE1D63CEA7007926C1 /* ListCreationSplitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358322BD1D63CEA7007926C1 /* ListCreationSplitController.swift */; };
+		358C8C621D521C0500F2786C /* ListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358C8C611D521C0500F2786C /* ListsController.swift */; };
+		358C8C641D521E0E00F2786C /* AllListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358C8C631D521E0E00F2786C /* AllListsController.swift */; };
+		35D564CF1D6389D5003D008C /* NewListItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D564CE1D6389D5003D008C /* NewListItemsController.swift */; };
+		35D564D31D63BDFA003D008C /* GroceryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D564D21D63BDFA003D008C /* GroceryTableViewCell.swift */; };
 		35F4799A1D42795C00DC0588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F479991D42795C00DC0588 /* AppDelegate.swift */; };
 		35F4799C1D42795C00DC0588 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F4799B1D42795C00DC0588 /* ViewController.swift */; };
 		35F4799F1D42795C00DC0588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F4799D1D42795C00DC0588 /* Main.storyboard */; };
@@ -29,6 +38,15 @@
 		355821F21D4D7ABE0095135B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		355821F51D4D7D8B0095135B /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		355821F71D4D80080095135B /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		355B97B01D57631B0040EF3E /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		355B97B21D5766570040EF3E /* SettingsHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHomeController.swift; sourceTree = "<group>"; };
+		3561753B1D6356240035170A /* CreateListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateListController.swift; sourceTree = "<group>"; };
+		3561753E1D63633E0035170A /* Grocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grocery.swift; sourceTree = "<group>"; };
+		358322BD1D63CEA7007926C1 /* ListCreationSplitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCreationSplitController.swift; sourceTree = "<group>"; };
+		358C8C611D521C0500F2786C /* ListsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsController.swift; sourceTree = "<group>"; };
+		358C8C631D521E0E00F2786C /* AllListsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsController.swift; sourceTree = "<group>"; };
+		35D564CE1D6389D5003D008C /* NewListItemsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListItemsController.swift; sourceTree = "<group>"; };
+		35D564D21D63BDFA003D008C /* GroceryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryTableViewCell.swift; sourceTree = "<group>"; };
 		35F479961D42795B00DC0588 /* List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = List.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35F479991D42795C00DC0588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35F4799B1D42795C00DC0588 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +82,14 @@
 			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		3561753D1D63631E0035170A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3561753E1D63633E0035170A /* Grocery.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		35F4798D1D42795B00DC0588 = {
 			isa = PBXGroup;
 			children = (
@@ -83,14 +109,23 @@
 		35F479981D42795C00DC0588 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				3561753D1D63631E0035170A /* Models */,
 				355821F41D4D7AC50095135B /* SWRevealViewController */,
 				35F479991D42795C00DC0588 /* AppDelegate.swift */,
+				35F4799B1D42795C00DC0588 /* ViewController.swift */,
+				355821F51D4D7D8B0095135B /* MenuController.swift */,
 				35F479B41D43101600DC0588 /* LoginController.swift */,
 				35F479B61D44E8A000DC0588 /* RegisterController.swift */,
-				355821F51D4D7D8B0095135B /* MenuController.swift */,
-				35F4799B1D42795C00DC0588 /* ViewController.swift */,
+				358C8C611D521C0500F2786C /* ListsController.swift */,
+				355B97B01D57631B0040EF3E /* SettingsController.swift */,
+				358C8C631D521E0E00F2786C /* AllListsController.swift */,
+				355B97B21D5766570040EF3E /* SettingsHomeController.swift */,
 				35F479B81D44F46F00DC0588 /* Helper.swift */,
 				355821F71D4D80080095135B /* HomeController.swift */,
+				35D564D21D63BDFA003D008C /* GroceryTableViewCell.swift */,
+				358322BD1D63CEA7007926C1 /* ListCreationSplitController.swift */,
+				3561753B1D6356240035170A /* CreateListController.swift */,
+				35D564CE1D6389D5003D008C /* NewListItemsController.swift */,
 				35F4799D1D42795C00DC0588 /* Main.storyboard */,
 				35F479A31D42795C00DC0588 /* Assets.xcassets */,
 				35F479B01D42F8B200DC0588 /* GaramondBold.ttf */,
@@ -177,15 +212,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				355B97B11D57631B0040EF3E /* SettingsController.swift in Sources */,
 				355821F61D4D7D8B0095135B /* MenuController.swift in Sources */,
 				35F479B71D44E8A000DC0588 /* RegisterController.swift in Sources */,
+				358322BE1D63CEA7007926C1 /* ListCreationSplitController.swift in Sources */,
 				35F4799C1D42795C00DC0588 /* ViewController.swift in Sources */,
 				35F479B51D43101600DC0588 /* LoginController.swift in Sources */,
+				35D564CF1D6389D5003D008C /* NewListItemsController.swift in Sources */,
 				355821F31D4D7ABE0095135B /* SWRevealViewController.m in Sources */,
+				358C8C641D521E0E00F2786C /* AllListsController.swift in Sources */,
+				35D564D31D63BDFA003D008C /* GroceryTableViewCell.swift in Sources */,
+				358C8C621D521C0500F2786C /* ListsController.swift in Sources */,
 				355821F81D4D80080095135B /* HomeController.swift in Sources */,
+				3561753C1D6356240035170A /* CreateListController.swift in Sources */,
+				355B97B31D5766570040EF3E /* SettingsHomeController.swift in Sources */,
 				35F4799A1D42795C00DC0588 /* AppDelegate.swift in Sources */,
 				35F479A21D42795C00DC0588 /* List.xcdatamodeld in Sources */,
 				35F479B91D44F46F00DC0588 /* Helper.swift in Sources */,
+				3561753F1D63633E0035170A /* Grocery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
