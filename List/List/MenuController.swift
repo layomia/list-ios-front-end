@@ -2,7 +2,7 @@
 //  MenuController.swift
 //  List
 //
-//  Created by Oluwalayomi Akinrinade on 7/30/16.
+//  Created by Oluwalayomi Akinrinade
 //  Copyright © 2016 Oluwalayomi Akinrinade. All rights reserved.
 //
 

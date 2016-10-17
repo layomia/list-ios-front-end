@@ -2,7 +2,7 @@
 //  HomeController.swift
 //  List
 //
-//  Created by Oluwalayomi Akinrinade on 7/30/16.
+//  Created by Oluwalayomi Akinrinade
 //  Copyright © 2016 Oluwalayomi Akinrinade. All rights reserved.
 //
 
@@ -29,25 +29,25 @@ class HomeController: UIViewController, UITextFieldDelegate {
     @IBOutlet var listTitleBox: UITextField!
     @IBOutlet var moneyAmountBox: UITextField!
     
-    @IBAction func viewLists(sender: AnyObject) {
+    @IBAction func viewLists(_ sender: AnyObject) {
         self.performSegue("homeToLists")
     }
     
-    @IBAction func cancelCreateList(sender: AnyObject) {
+    @IBAction func cancelCreateList(_ sender: AnyObject) {
         setBeginState()
         self.view.endEditing(true)
     }
     
-    @IBAction func proceed(sender: AnyObject) {
+    @IBAction func proceed(_ sender: AnyObject) {
         setEnterFundsState()
         self.view.endEditing(true)
     }
     
-    @IBAction func createList(sender: AnyObject) {
+    @IBAction func createList(_ sender: AnyObject) {
         setEnterNameState()
     }
     
-    @IBAction func toNewList(sender: AnyObject) {
+    @IBAction func toNewList(_ sender: AnyObject) {
         //perform segue
         self.view.endEditing(true)
         performSegue("fromCreateToNewList")
@@ -72,7 +72,7 @@ class HomeController: UIViewController, UITextFieldDelegate {
     }
     
     //hide keyboard when user taps outside of keyboard
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -83,20 +83,20 @@ class HomeController: UIViewController, UITextFieldDelegate {
     }
     
     //hide keyboard when user hits return
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     //perform segue
-    func performSegue(identifier:String){
-        self.performSegueWithIdentifier(identifier, sender: self)
+    func performSegue(_ identifier:String){
+        self.performSegue(withIdentifier: identifier, sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == "fromCreateToNewList" {
-            if let destinationVC = segue.destinationViewController as? CreateListController {
-                print(segue.destinationViewController)
+            if let destinationVC = segue.destination as? CreateListController {
+                print(segue.destination)
                 destinationVC.listTitle = listTitleBox.text!
                 destinationVC.fundsAllocated = Int(moneyAmountBox.text!)!
             }
@@ -105,58 +105,58 @@ class HomeController: UIViewController, UITextFieldDelegate {
     
     func setBeginState() {
         //hidden items
-        cancelButton.hidden = true
-        proceedButton.hidden = true
-        listTitleBackgroundBox.hidden = true
-        listTitlePrompt.hidden = true
-        listTitleBox.hidden = true
-        moneyAmountBox.hidden = true
-        dollarSignImage.hidden = true
-        toNewListButton.hidden = true
-        fundsPrompt.hidden = true
+        cancelButton.isHidden = true
+        proceedButton.isHidden = true
+        listTitleBackgroundBox.isHidden = true
+        listTitlePrompt.isHidden = true
+        listTitleBox.isHidden = true
+        moneyAmountBox.isHidden = true
+        dollarSignImage.isHidden = true
+        toNewListButton.isHidden = true
+        fundsPrompt.isHidden = true
         
         //visible items
-        backgroundFruits.hidden = false
-        createListPrompt.hidden = false
-        viewListsButton.hidden = false
-        createListButton.hidden = false
+        backgroundFruits.isHidden = false
+        createListPrompt.isHidden = false
+        viewListsButton.isHidden = false
+        createListButton.isHidden = false
     }
     
     func setEnterNameState() {
         //hidden items
-        createListPrompt.hidden = true
-        viewListsButton.hidden = true
-        createListButton.hidden = true
-        moneyAmountBox.hidden = true
-        dollarSignImage.hidden = true
-        toNewListButton.hidden = true
-        fundsPrompt.hidden = true
+        createListPrompt.isHidden = true
+        viewListsButton.isHidden = true
+        createListButton.isHidden = true
+        moneyAmountBox.isHidden = true
+        dollarSignImage.isHidden = true
+        toNewListButton.isHidden = true
+        fundsPrompt.isHidden = true
         
         //visible items
-        cancelButton.hidden = false
-        proceedButton.hidden = false
-        listTitleBackgroundBox.hidden = false
-        listTitlePrompt.hidden = false
-        listTitleBox.hidden = false
-        backgroundFruits.hidden = false
+        cancelButton.isHidden = false
+        proceedButton.isHidden = false
+        listTitleBackgroundBox.isHidden = false
+        listTitlePrompt.isHidden = false
+        listTitleBox.isHidden = false
+        backgroundFruits.isHidden = false
     }
     
     func setEnterFundsState() {
         //hidden items
-        createListPrompt.hidden = true
-        viewListsButton.hidden = true
-        createListButton.hidden = true
-        listTitlePrompt.hidden = true
-        listTitleBox.hidden = true
-        backgroundFruits.hidden = true
-        proceedButton.hidden = true
+        createListPrompt.isHidden = true
+        viewListsButton.isHidden = true
+        createListButton.isHidden = true
+        listTitlePrompt.isHidden = true
+        listTitleBox.isHidden = true
+        backgroundFruits.isHidden = true
+        proceedButton.isHidden = true
         
         //visible items
-        cancelButton.hidden = false
-        listTitleBackgroundBox.hidden = false
-        moneyAmountBox.hidden = false
-        dollarSignImage.hidden = false
-        toNewListButton.hidden = false
-        fundsPrompt.hidden = false
+        cancelButton.isHidden = false
+        listTitleBackgroundBox.isHidden = false
+        moneyAmountBox.isHidden = false
+        dollarSignImage.isHidden = false
+        toNewListButton.isHidden = false
+        fundsPrompt.isHidden = false
     }
 }

@@ -2,7 +2,7 @@
 //  NewListItemsController.swift
 //  List
 //
-//  Created by Oluwalayomi Akinrinade on 8/16/16.
+//  Created by Oluwalayomi Akinrinade
 //  Copyright © 2016 Oluwalayomi Akinrinade. All rights reserved.
 //
 

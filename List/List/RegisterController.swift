@@ -2,7 +2,7 @@
 //  RegisterController.swift
 //  List
 //
-//  Created by Oluwalayomi Akinrinade on 7/24/16.
+//  Created by Oluwalayomi Akinrinade
 //  Copyright © 2016 Oluwalayomi Akinrinade. All rights reserved.
 //
 
@@ -30,62 +30,62 @@ class RegisterController: UIViewController, UITextFieldDelegate {
         return !(helper.isValidName(firstName.text!) && helper.isValidName(lastName.text!) && helper.isValidEmail(email.text!) && password.text! == repeatPassword.text! && helper.isValidPassword(password.text!));
     }
     
-    @IBAction func register(sender: AnyObject) {
+    @IBAction func register(_ sender: AnyObject) {
         
         if issueWithForm() {
             helper.displayAlert(self, title: "Error in form", message: "Please enter all details correctly")
         } else {
             
             //show activity indicator
-            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+            activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             activityIndicator.center = self.view.center
             activityIndicator.hidesWhenStopped = true
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
             view.addSubview(activityIndicator)
             activityIndicator.startAnimating()
-            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            UIApplication.shared.beginIgnoringInteractionEvents()
             
             
             //post parameters
             let parameters = "firstName=\(firstName.text!)&lastName=\(lastName.text!)&username=\(username.text!)&email=\(email.text!)&password=\(password.text!)"
             
             //url
-            let url = NSURL(string: "https://list-backend-api.herokuapp.com/api/users")
+            let url = URL(string: "https://list-backend-api.herokuapp.com/api/users")
             
             //create session object
-            let session = NSURLSession.sharedSession()
-            let request = NSMutableURLRequest(URL: url!)
-            request.HTTPMethod = "POST"
+            let session = URLSession.shared
+            let request = NSMutableURLRequest(url: url!)
+            request.httpMethod = "POST"
             
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
-            request.HTTPBody = parameters.dataUsingEncoding(NSUTF8StringEncoding);
+            request.httpBody = parameters.data(using: String.Encoding.utf8);
             
         
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 
-                let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
+                let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
                     
                     self.activityIndicator.stopAnimating()
-                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                    UIApplication.shared.endIgnoringInteractionEvents()
                     
                     print("Response: \(response)")
-                    let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)!
+                    let strData = NSString(data: data!, encoding: String.Encoding.utf8)!
                     print("Body: \(strData)")
     
                     
                     //make sure to account for error
                     
                     do {
-                        let jsonServerResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! Dictionary<String, AnyObject>
+                        let jsonServerResponse = try JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, AnyObject>
                         
                         let errmsg = jsonServerResponse["errmsg"] as? String
                         
                         if (errmsg == "Nil") {
                             //registration successful
-                            let defaults = `NSUserDefaults`.standardUserDefaults()
+                            let defaults = UserDefaults.standard
                             
-                            defaults.setObject(jsonServerResponse["user_id"]! as! String, forKey: "user_id")
+                            defaults.set(jsonServerResponse["user_id"]! as! String, forKey: "user_id")
                             defaults.synchronize()
                             
                             print("user registered")
@@ -123,7 +123,7 @@ class RegisterController: UIViewController, UITextFieldDelegate {
     }
     
     //hide keyboard when user taps outside of keyboard
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -138,14 +138,14 @@ class RegisterController: UIViewController, UITextFieldDelegate {
     }
     
     //hide keyboard when user hits return
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
         return true
     }
     
     //perform segue
-    func performSegue(identifier:String){
-        self.performSegueWithIdentifier(identifier, sender: self)
+    func performSegue(_ identifier:String){
+        self.performSegue(withIdentifier: identifier, sender: self)
     }
 }

@@ -171,6 +171,7 @@
 					35F479951D42795B00DC0588 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = KFCFWRNE73;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -353,6 +354,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "List/List-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -370,6 +372,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "List/List-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

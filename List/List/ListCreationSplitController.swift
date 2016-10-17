@@ -2,7 +2,7 @@
 //  ListCreationSplitController.swift
 //  List
 //
-//  Created by Oluwalayomi Akinrinade on 8/16/16.
+//  Created by Oluwalayomi Akinrinade
 //  Copyright © 2016 Oluwalayomi Akinrinade. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ class ListCreationSplitController: UISplitViewController, UISplitViewControllerD
         self.delegate = self
     }
     
-    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool{
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool{
         return true
     }
     

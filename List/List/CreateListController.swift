@@ -2,7 +2,7 @@
 //  CreateListController.swift
 //  List
 //
-//  Created by Oluwalayomi Akinrinade on 8/16/16.
+//  Created by Oluwalayomi Akinrinade
 //  Copyright © 2016 Oluwalayomi Akinrinade. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension CreateListController: UISearchResultsUpdating {
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
@@ -34,7 +34,7 @@ class CreateListController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         //light formatting for table
-        self.tableView.separatorStyle = .None
+        self.tableView.separatorStyle = .none
         
         //specifications for search functionality
         searchController.searchResultsUpdater = self
@@ -70,8 +70,8 @@ class CreateListController: UITableViewController{
         ]
     }
     
-    override func viewWillAppear(animated: Bool) {
-        clearsSelectionOnViewWillAppear = splitViewController!.collapsed
+    override func viewWillAppear(_ animated: Bool) {
+        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
     
@@ -81,12 +81,12 @@ class CreateListController: UITableViewController{
     }
     
     //Table View
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.active && searchController.searchBar.text != "" {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive && searchController.searchBar.text != "" {
             return filteredGroceries.count
         }
         
@@ -94,14 +94,14 @@ class CreateListController: UITableViewController{
         return 0
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! GroceryTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! GroceryTableViewCell
         
         let grocery: Grocery
-        if searchController.active && searchController.searchBar.text != "" {
-            grocery = filteredGroceries[indexPath.row]
+        if searchController.isActive && searchController.searchBar.text != "" {
+            grocery = filteredGroceries[(indexPath as NSIndexPath).row]
         } else {
-            grocery = groceries[indexPath.row]
+            grocery = groceries[(indexPath as NSIndexPath).row]
         }
         
         let image : UIImage = UIImage(named: grocery.imgName)!
@@ -113,19 +113,19 @@ class CreateListController: UITableViewController{
     }
     
     //function for when is tapped
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
-    @IBAction func closeCreateList(sender: AnyObject) {
+    @IBAction func closeCreateList(_ sender: AnyObject) {
         //confirm that user wants to leave current page
         
         performSegue("fromNewListToCreate")
     }
     
     //Search Functionality
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredGroceries = groceries.filter { grocery in
-            return grocery.name.lowercaseString.containsString(searchText.lowercaseString)
+            return grocery.name.lowercased().contains(searchText.lowercased())
         }
         
         tableView.reloadData()
@@ -133,11 +133,11 @@ class CreateListController: UITableViewController{
     
     //Segues
     //perform segue
-    func performSegue(identifier:String){
-        self.performSegueWithIdentifier(identifier, sender: self)
+    func performSegue(_ identifier:String){
+        self.performSegue(withIdentifier: identifier, sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAddedItems" {
             
         }
