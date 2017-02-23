@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+/*
+ To Do
+ 1. Do validation for all user input on this view
+ */
+
 class HomeController: UIViewController, UITextFieldDelegate {
     
     var pageState = 0 //0: create prompt; 1: enter name of list prompt
@@ -95,11 +100,10 @@ class HomeController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == "fromCreateToNewList" {
-            if let destinationVC = segue.destination as? CreateListController {
-                print(segue.destination)
-                destinationVC.listTitle = listTitleBox.text!
-                destinationVC.fundsAllocated = Int(moneyAmountBox.text!)!
-            }
+            let defaults = UserDefaults.standard
+            defaults.set(listTitleBox.text!, forKey: "current_new_list_name")
+            defaults.set(Int(moneyAmountBox.text!)!, forKey: "current_new_list_amount")
+            defaults.synchronize()
         }
     }
     

@@ -21,10 +21,10 @@ class RegisterController: UIViewController, UITextFieldDelegate {
     @IBOutlet var repeatPassword: UITextField!
     
     
-    //activity indicator for when we attempt to log in
+    // activity indicator for when we attempt to log in
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
-    //detect if there is an issue with a form
+    // detect if there is an issue with a form
     func issueWithForm() -> Bool {
         
         return !(helper.isValidName(firstName.text!) && helper.isValidName(lastName.text!) && helper.isValidEmail(email.text!) && password.text! == repeatPassword.text! && helper.isValidPassword(password.text!));
@@ -64,18 +64,15 @@ class RegisterController: UIViewController, UITextFieldDelegate {
         
             DispatchQueue.main.async(execute: {
                 
-                let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+                let task = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
                     
                     self.activityIndicator.stopAnimating()
                     UIApplication.shared.endIgnoringInteractionEvents()
                     
                     print("Response: \(response)")
-                    let strData = NSString(data: data!, encoding: String.Encoding.utf8)!
+                    let strData = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!
                     print("Body: \(strData)")
     
-                    
-                    //make sure to account for error
-                    
                     do {
                         let jsonServerResponse = try JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, AnyObject>
                         

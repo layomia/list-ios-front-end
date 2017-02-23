@@ -6,6 +6,7 @@
 //  Copyright © 2016 Oluwalayomi Akinrinade. All rights reserved.
 //
 
+
 import UIKit
 import CoreData
 
@@ -19,8 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let defaults: UserDefaults = UserDefaults.standard
         
-        //check whether user is signed in. Probably not the best way for now, but do some more research about this
-        if defaults.object(forKey: "user_id") != nil && (defaults.object(forKey: "user_id") as? String) != "" {
+        let userSignedIn: Bool = defaults.object(forKey: "user_id") != nil && (defaults.object(forKey: "user_id") as? String) != ""
+        let userDoesntHaveListCounterSet: Bool = defaults.object(forKey: "listCounter") == nil
+        
+        // Check whether user has an lists, if not set a default
+        if userDoesntHaveListCounterSet {
+            defaults.set(0, forKey: "listCounter")
+        }
+        
+        /*
+        // check whether user is signed in. Probably not the best way for now, but do some more research about this
+        if userSignedIn {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -28,7 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appDelegate.window?.rootViewController = yourVC
             appDelegate.window?.makeKeyAndVisible()
         }
-
+        */
+        
         return true
     }
 

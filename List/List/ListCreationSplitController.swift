@@ -10,10 +10,10 @@ import Foundation
 
 class ListCreationSplitController: UISplitViewController, UISplitViewControllerDelegate {
     var listTitle = ""
+    var fundsAllocated = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.delegate = self
     }
     

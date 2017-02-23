@@ -28,14 +28,10 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(_ sender: AnyObject) {
-        
         //create functions for these
         if issueWithForm() {
-            
             helper.displayAlert(self, title: "Error in form", message: "Please enter all details correctly")
-        
         } else {
-            
             activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             activityIndicator.center = self.view.center
             activityIndicator.hidesWhenStopped = true
@@ -59,55 +55,48 @@ class LoginController: UIViewController, UITextFieldDelegate {
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             request.httpBody = parameters.data(using: String.Encoding.utf8);
             
-            
             DispatchQueue.main.async(execute: {
                 
-                let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+                let task = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
                     
-                    //self.activityIndicator.stopAnimating()
-                    //UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                    
-                    
-                    print("Response: \(response)")
-                    let strData = NSString(data: data!, encoding: String.Encoding.utf8)!
-                    print("Body: \(strData)")
-                    
-                    
-                    //make sure to account for error
+                    let strData = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!
                     
                     do {
                         let jsonServerResponse = try JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, AnyObject>
                         
-                        if (jsonServerResponse["message"] == nil){
-                            //login successful
+                        //login successful
+                        if (jsonServerResponse["message"] == nil) {
                             let defaults = UserDefaults.standard
-                            
                             defaults.set(jsonServerResponse["_id"]! as! String, forKey: "user_id")
                             defaults.synchronize()
                             
-                            print("user logged in")
-                            self.performSegue("login")
+                            // resume screen interactivity
+                            self.activityIndicator.stopAnimating()
+                            UIApplication.shared.endIgnoringInteractionEvents()
+                            
+                            OperationQueue.main.addOperation {
+                                self.performSegue("login")
+                            }
                             
                         } else {
                             //sign up unsucessful: investigate the following!!!
                             helper.displayAlert(self, title: "Unable to Register", message: jsonServerResponse["message"]! as! String)
+                            self.activityIndicator.stopAnimating()
+                            UIApplication.shared.endIgnoringInteractionEvents()
                         }
                         
                     } catch let error as NSError {
                         print("json error: \(error.localizedDescription)")
                         helper.displayAlert(self, title: "Unable to Register", message: "Please try again later")
+                        self.activityIndicator.stopAnimating()
+                        UIApplication.shared.endIgnoringInteractionEvents()
                     }
-                    
                 })
                 
                 task.resume()
-                self.activityIndicator.stopAnimating()
-                UIApplication.shared.endIgnoringInteractionEvents()
-            })
-            
 
+            })
         }
-        
     }
     
     override func viewDidLoad() {
@@ -123,34 +112,26 @@ class LoginController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
     //hide keyboard when user taps outside of keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         self.view.endEditing(true)
-        
     }
     
     //assign textField delegates
     func assignTextFieldDelegates() {
-
         self.email.delegate = self
         self.password.delegate = self
-    
     }
     
     //hide keyboard when user hits return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-
         textField.resignFirstResponder()
-        
         return true
     }
-    
     
     //perfrom segue
     func performSegue(_ identifier:String){
         self.performSegue(withIdentifier: identifier, sender: self)
     }
-    
+
 }

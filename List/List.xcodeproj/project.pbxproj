@@ -17,6 +17,12 @@
 		358322BE1D63CEA7007926C1 /* ListCreationSplitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358322BD1D63CEA7007926C1 /* ListCreationSplitController.swift */; };
 		358C8C621D521C0500F2786C /* ListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358C8C611D521C0500F2786C /* ListsController.swift */; };
 		358C8C641D521E0E00F2786C /* AllListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358C8C631D521E0E00F2786C /* AllListsController.swift */; };
+		35A8ED1A1DE46C8200E593B1 /* StoresController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8ED191DE46C8200E593B1 /* StoresController.swift */; };
+		35A8ED1C1DE46DF600E593B1 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8ED1B1DE46DF600E593B1 /* StoreTableViewCell.swift */; };
+		35A8ED1E1DE4724F00E593B1 /* PricesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8ED1D1DE4724F00E593B1 /* PricesController.swift */; };
+		35A8ED201DE4734000E593B1 /* PriceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8ED1F1DE4734000E593B1 /* PriceTableViewController.swift */; };
+		35C9B4501DD7ACA300DBCA26 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C9B44F1DD7ACA300DBCA26 /* ListTableViewCell.swift */; };
+		35C9B4521DD7AD3900DBCA26 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C9B4511DD7AD3900DBCA26 /* List.swift */; };
 		35D564CF1D6389D5003D008C /* NewListItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D564CE1D6389D5003D008C /* NewListItemsController.swift */; };
 		35D564D31D63BDFA003D008C /* GroceryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D564D21D63BDFA003D008C /* GroceryTableViewCell.swift */; };
 		35F4799A1D42795C00DC0588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F479991D42795C00DC0588 /* AppDelegate.swift */; };
@@ -45,6 +51,12 @@
 		358322BD1D63CEA7007926C1 /* ListCreationSplitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCreationSplitController.swift; sourceTree = "<group>"; };
 		358C8C611D521C0500F2786C /* ListsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsController.swift; sourceTree = "<group>"; };
 		358C8C631D521E0E00F2786C /* AllListsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsController.swift; sourceTree = "<group>"; };
+		35A8ED191DE46C8200E593B1 /* StoresController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresController.swift; sourceTree = "<group>"; };
+		35A8ED1B1DE46DF600E593B1 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
+		35A8ED1D1DE4724F00E593B1 /* PricesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PricesController.swift; sourceTree = "<group>"; };
+		35A8ED1F1DE4734000E593B1 /* PriceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceTableViewController.swift; sourceTree = "<group>"; };
+		35C9B44F1DD7ACA300DBCA26 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		35C9B4511DD7AD3900DBCA26 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		35D564CE1D6389D5003D008C /* NewListItemsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListItemsController.swift; sourceTree = "<group>"; };
 		35D564D21D63BDFA003D008C /* GroceryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryTableViewCell.swift; sourceTree = "<group>"; };
 		35F479961D42795B00DC0588 /* List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = List.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				3561753E1D63633E0035170A /* Grocery.swift */,
+				35C9B4511DD7AD3900DBCA26 /* List.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -114,15 +127,20 @@
 				35F479991D42795C00DC0588 /* AppDelegate.swift */,
 				35F4799B1D42795C00DC0588 /* ViewController.swift */,
 				355821F51D4D7D8B0095135B /* MenuController.swift */,
+				35A8ED1D1DE4724F00E593B1 /* PricesController.swift */,
 				35F479B41D43101600DC0588 /* LoginController.swift */,
 				35F479B61D44E8A000DC0588 /* RegisterController.swift */,
 				358C8C611D521C0500F2786C /* ListsController.swift */,
 				355B97B01D57631B0040EF3E /* SettingsController.swift */,
-				358C8C631D521E0E00F2786C /* AllListsController.swift */,
 				355B97B21D5766570040EF3E /* SettingsHomeController.swift */,
 				35F479B81D44F46F00DC0588 /* Helper.swift */,
 				355821F71D4D80080095135B /* HomeController.swift */,
+				358C8C631D521E0E00F2786C /* AllListsController.swift */,
+				35A8ED1F1DE4734000E593B1 /* PriceTableViewController.swift */,
+				35A8ED191DE46C8200E593B1 /* StoresController.swift */,
+				35A8ED1B1DE46DF600E593B1 /* StoreTableViewCell.swift */,
 				35D564D21D63BDFA003D008C /* GroceryTableViewCell.swift */,
+				35C9B44F1DD7ACA300DBCA26 /* ListTableViewCell.swift */,
 				358322BD1D63CEA7007926C1 /* ListCreationSplitController.swift */,
 				3561753B1D6356240035170A /* CreateListController.swift */,
 				35D564CE1D6389D5003D008C /* NewListItemsController.swift */,
@@ -165,13 +183,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Oluwalayomi Akinrinade";
 				TargetAttributes = {
 					35F479951D42795B00DC0588 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = KFCFWRNE73;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -216,15 +239,21 @@
 				355B97B11D57631B0040EF3E /* SettingsController.swift in Sources */,
 				355821F61D4D7D8B0095135B /* MenuController.swift in Sources */,
 				35F479B71D44E8A000DC0588 /* RegisterController.swift in Sources */,
+				35A8ED201DE4734000E593B1 /* PriceTableViewController.swift in Sources */,
 				358322BE1D63CEA7007926C1 /* ListCreationSplitController.swift in Sources */,
 				35F4799C1D42795C00DC0588 /* ViewController.swift in Sources */,
 				35F479B51D43101600DC0588 /* LoginController.swift in Sources */,
 				35D564CF1D6389D5003D008C /* NewListItemsController.swift in Sources */,
 				355821F31D4D7ABE0095135B /* SWRevealViewController.m in Sources */,
+				35A8ED1A1DE46C8200E593B1 /* StoresController.swift in Sources */,
+				35C9B4501DD7ACA300DBCA26 /* ListTableViewCell.swift in Sources */,
 				358C8C641D521E0E00F2786C /* AllListsController.swift in Sources */,
 				35D564D31D63BDFA003D008C /* GroceryTableViewCell.swift in Sources */,
 				358C8C621D521C0500F2786C /* ListsController.swift in Sources */,
+				35A8ED1E1DE4724F00E593B1 /* PricesController.swift in Sources */,
+				35A8ED1C1DE46DF600E593B1 /* StoreTableViewCell.swift in Sources */,
 				355821F81D4D80080095135B /* HomeController.swift in Sources */,
+				35C9B4521DD7AD3900DBCA26 /* List.swift in Sources */,
 				3561753C1D6356240035170A /* CreateListController.swift in Sources */,
 				355B97B31D5766570040EF3E /* SettingsHomeController.swift in Sources */,
 				35F4799A1D42795C00DC0588 /* AppDelegate.swift in Sources */,
@@ -270,8 +299,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -315,8 +346,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -335,6 +368,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
